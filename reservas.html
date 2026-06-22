@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book.Net - Reservas</title>
+  <link href="src/output.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+<body class="bg-gray-100 text-gray-900">
+     <header class="bg-white">
+    <nav aria-label="Global" class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
+      <div class="flex lg:flex-1">
+        <a href="#" class="-m-1.5 p-1.5 text-black grid grid-cols-2 place-items-center">
+          <img src="src/book-logo.png" alt="" class="h-10 w-auto" />
+          <span class="font-bold text-xl">Book.net</span>
+        </a>
+      </div>
+      <div class="flex lg:hidden">
+        <button type="button" command="show-modal" commandfor="mobile-menu" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+          <span class="sr-only">Open main menu</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6">
+            <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+      </div>
+      <el-popover-group class="hidden lg:flex lg:gap-x-12">
+        <a href="index.html" class="text-sm/6 font-semibold text-gray-900">Home</a>
+        <a href="livros.html" class="text-sm/6 font-semibold text-gray-900">Livros</a>
+        <a href="alugueis.html" class="text-sm/6 font-semibold text-gray-900">Vendas</a>
+        <a href="#" class="text-sm/6 font-semibold text-gray-900">Reservas</a>
+      </el-popover-group>
+    </nav>
+    <el-dialog>
+      <dialog id="mobile-menu" class="backdrop:bg-transparent lg:hidden">
+        <div tabindex="0" class="fixed inset-0 focus:outline-none">
+          <el-dialog-panel class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+            <div class="flex items-center justify-between">
+              <a href="#" class="-m-1.5 p-1.5 text-black grid grid-cols-2 place-items-center">
+                <img src="src/book-logo.png" alt="" class="h-10 w-auto" />
+                <span class="font-bold text-xl">Book.net</span>
+              </a>
+              <button type="button" command="close" commandfor="mobile-menu" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+                <span class="sr-only">Close menu</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6">
+                  <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+            </div>
+            <div class="mt-6 flow-root">
+              <div class="-my-6 divide-y divide-gray-500/10">
+                <div class="space-y-2 py-6">
+                  <div class="-mx-3">
+                  </div>
+                  <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Home</a>
+                  <a href="livros.html" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Livros</a>
+                  <a href="alugueis.html" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Vendas</a>
+                  <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Reservas</a>
+                </div>
+              </div>
+            </div>
+          </el-dialog-panel>
+        </div>
+      </dialog>
+    </el-dialog>
+  </header>
+  <main class="mx-auto max-w-6xl px-4 py-8">
+    <div class="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+      <div>
+        <p class="text-sm font-semibold text-green-700">Book.Net</p>
+        <h1 class="text-3xl font-bold">Reservas de livros</h1>
+      </div>
+      <a href="index.html" class="inline-flex w-fit items-center gap-2 rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-50">
+        <i class="fa-solid fa-arrow-left"></i>
+        Voltar
+      </a>
+    </div>
+
+    <section class="grid gap-4 md:grid-cols-3">
+      <div class="rounded-md bg-white p-4 shadow-sm">
+        <p class="text-sm text-gray-500">Reservas abertas</p>
+        <strong class="mt-2 block text-2xl">19</strong>
+      </div>
+      <div class="rounded-md bg-white p-4 shadow-sm">
+        <p class="text-sm text-gray-500">Aguardando retirada</p>
+        <strong class="mt-2 block text-2xl">6</strong>
+      </div>
+      <div class="rounded-md bg-white p-4 shadow-sm">
+        <p class="text-sm text-gray-500">Fila media</p>
+        <strong class="mt-2 block text-2xl">3 clientes</strong>
+      </div>
+    </section>
+
+    <section class="mt-6 grid gap-6 lg:grid-cols-3">
+      <form class="rounded-md bg-white p-5 shadow-sm lg:col-span-2">
+        <h2 class="mb-4 text-xl font-bold">Nova reserva</h2>
+        <div class="grid gap-4 md:grid-cols-2">
+          <label class="text-sm font-semibold">
+            Cliente *
+            <input type="text" placeholder="Nome ou CPF" class="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 font-normal">
+          </label>
+          <label class="text-sm font-semibold">
+            Livro alugado *
+            <input type="text" placeholder="ISBN ou nome do livro" class="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 font-normal">
+          </label>
+          <label class="text-sm font-semibold">
+            Data da reserva *
+            <input type="date" class="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 font-normal">
+          </label>
+          <label class="text-sm font-semibold">
+            Previsao de disponibilidade
+            <input type="date" class="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 font-normal">
+          </label>
+          <label class="text-sm font-semibold md:col-span-2">
+            Observacao
+            <input type="text" placeholder="Avisar por telefone, e-mail ou WhatsApp" class="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 font-normal">
+          </label>
+        </div>
+        <button type="button" class="mt-5 rounded-md bg-green-700 px-5 py-2 text-sm font-semibold text-white hover:bg-green-800">
+          Criar reserva
+        </button>
+      </form>
+
+      <section class="rounded-md bg-white p-5 shadow-sm">
+        <h2 class="text-lg font-bold">Fila de prioridade</h2>
+        <p class="mt-2 text-sm text-gray-600">Quando o exemplar voltar, o primeiro cliente da fila deve ser notificado.</p>
+        <div class="mt-4 space-y-3 text-sm">
+          <div class="rounded-md border border-gray-200 p-3">
+            <strong>Arquitetura de Redes</strong>
+            <p class="mt-1 text-gray-600">3 reservas na fila</p>
+          </div>
+          <div class="rounded-md border border-gray-200 p-3">
+            <strong>JavaScript Guia</strong>
+            <p class="mt-1 text-gray-600">2 reservas na fila</p>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <section class="mt-6 rounded-md bg-white p-5 shadow-sm">
+      <h2 class="mb-4 text-xl font-bold">Reservas em andamento</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full min-w-[760px] text-left text-sm">
+          <thead class="bg-gray-100 text-gray-600">
+            <tr>
+              <th class="px-3 py-2">Posicao</th>
+              <th class="px-3 py-2">Cliente</th>
+              <th class="px-3 py-2">Livro</th>
+              <th class="px-3 py-2">Reserva</th>
+              <th class="px-3 py-2">Previsao</th>
+              <th class="px-3 py-2">Status</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200">
+            <tr>
+              <td class="px-3 py-3">1</td>
+              <td class="px-3 py-3">Ana Torres</td>
+              <td class="px-3 py-3">Arquitetura de Redes</td>
+              <td class="px-3 py-3">20/06/2026</td>
+              <td class="px-3 py-3">29/06/2026</td>
+              <td class="px-3 py-3"><span class="rounded-full bg-yellow-100 px-2 py-1 text-xs font-semibold text-yellow-700">Aguardando devolucao</span></td>
+            </tr>
+            <tr>
+              <td class="px-3 py-3">2</td>
+              <td class="px-3 py-3">Bruno Silva</td>
+              <td class="px-3 py-3">Arquitetura de Redes</td>
+              <td class="px-3 py-3">21/06/2026</td>
+              <td class="px-3 py-3">29/06/2026</td>
+              <td class="px-3 py-3"><span class="rounded-full bg-gray-100 px-2 py-1 text-xs font-semibold text-gray-700">Na fila</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
